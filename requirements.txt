@@ -35,6 +35,9 @@ opencc; sys_platform != 'linux'
 opencc==1.1.1; sys_platform == 'linux'
 python_mecab_ko; sys_platform != 'win32'
 fastapi[standard]>=0.115.2
+uvicorn[standard]>=0.30.0
+websockets>=12.0
+python-multipart>=0.0.9
 x_transformers
 torchmetrics<=1.5
 pydantic<=2.10.6
