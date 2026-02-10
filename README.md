@@ -10,6 +10,7 @@ Project Riko is a anime focused LLM project by Just Rayen. She listens, and reme
 - 🔊 **Voice generation** via GPT-SoVITS API
 - 🎧 **Speech recognition** using Faster-Whisper
 - 📁 Clean YAML-based config for personality configuration
+- 🌐 **WebSocket integration** for real-time frontend communication (VTuber avatar support)
 
 
 ## ⚙️ Configuration
@@ -60,9 +61,19 @@ uv pip install -r requirements.txt
 
 ### 2. Run the main script:
 
-
+**CLI Mode (No Frontend):**
 ```bash
-python main_chat.py
+python server/main_chat.py
+```
+
+**WebSocket Mode (With VTuber Frontend):**
+```bash
+python server/main_chat_ws.py
+```
+
+**Testing WebSocket Server Only:**
+```bash
+python server/run_server_only.py
 ```
 
 The flow:
@@ -73,14 +84,18 @@ The flow:
 4. Generates a response
 5. Synthesizes Riko's voice using GPT-SoVITS
 6. Plays the output back to you
+7. (WebSocket mode) Broadcasts state to connected frontends for avatar animation
+
+For detailed WebSocket setup and integration, see [README_WEBSOCKET.md](README_WEBSOCKET.md).
 
 
 ## 📌 TODO / Future Improvements
 
+* [x] WebSocket server for frontend integration
 * [ ] GUI or web interface
 * [ ] Live microphone input support
 * [ ] Emotion or tone control in speech synthesis
-* [ ] VRM model frontend
+* [x] VRM model frontend (via WebSocket integration)
 
 
 ## 🧑‍🎤 Credits
